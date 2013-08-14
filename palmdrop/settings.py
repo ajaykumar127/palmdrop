@@ -28,11 +28,11 @@ AWS_STORAGE_BUCKET_NAME = 'palmdrop'
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Static files location
-STATICFILES_STORAGE = 'storages.backends.s3.S3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATIC_URL = S3_URL
 
 # Default File storage
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 MEDIA_URL = S3_URL
 

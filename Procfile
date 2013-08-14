@@ -1,1 +1,1 @@
-web: gunicorn palmdrop.wsgi:
+web: gunicorn palmdrop.wsgi

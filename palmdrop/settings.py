@@ -1,6 +1,7 @@
 # Django settings for palmdrop project.
 # -*- coding: utf-8 -*-
 import os
+import dj_database_url
 gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
@@ -13,8 +14,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
+# DATABASES['default'] =  dj_database_url.config()
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 
 # Amazon S3 credentials

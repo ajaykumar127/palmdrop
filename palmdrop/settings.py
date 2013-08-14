@@ -23,7 +23,7 @@ MANAGERS = ADMINS
 AWS_ACCESS_KEY_ID       = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY   = os.environ['AWS_SECRET_ACCESS_KEY']
 
-# Amazon S3 URL
+Amazon S3 URL
 AWS_STORAGE_BUCKET_NAME = 'palmdrop'
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
@@ -53,6 +53,18 @@ DATABASES = {'default': dj_database_url.config()}
 #         'PORT': '',                      # Set to empty string for default.
 #     }
 # }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#         'NAME': 'palmdrop',                      # Or path to database file if using sqlite3.
+#         'USER': '',                      # Not used with sqlite3.
+#         'PASSWORD': '',                  # Not used with sqlite3.
+#         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#     }
+# }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts

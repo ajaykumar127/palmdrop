@@ -25,14 +25,14 @@ AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 # Amazon S3 URL
 AWS_STORAGE_BUCKET_NAME = 'palmdrop'
-S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+# S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Static files location
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # Default File storage
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+
 MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
 
 #for connecting through http not https on amazon
@@ -111,6 +111,8 @@ STATIC_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/static/'
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/https://s3.amazonaws.com/palmdrop/static/'
+STATIC_DOC_ROOT = ROOT_PATH + '/static'
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (

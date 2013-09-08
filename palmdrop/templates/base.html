@@ -1,4 +1,5 @@
 {% load cms_tags sekizai_tags %}
+{% csrf_token %}
 <html>
   <head>
       <title>{{ request.current_page.get_title }}</title>

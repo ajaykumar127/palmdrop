@@ -29,12 +29,12 @@ S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Static files location
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATIC_URL = S3_URL
+STATIC_URL = '/https://s3.amazonaws.com/palmdrop/static/'
 
 # Default File storage
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
-MEDIA_URL = S3_URL
+MEDIA_URL = MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
 
 #for connecting through http not https on amazon
 AWS_S3_SECURE_URLS = False
@@ -209,6 +209,7 @@ INSTALLED_APPS = (
     'cms.plugins.video',
     'cms.plugins.twitter',
     'storages',
+
 )
 
 # A sample logging configuration. The only tangible logging

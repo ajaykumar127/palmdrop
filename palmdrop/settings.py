@@ -207,10 +207,10 @@ INSTALLED_APPS = (
     'cms.plugins.link',
     'cms.plugins.picture',
     'cms.plugins.snippet',
-    'cms.plugins.teaser',
+    # 'cms.plugins.teaser',
     'cms.plugins.text',
-    'cms.plugins.video',
-    'cms.plugins.twitter',
+    # 'cms.plugins.video',
+    # 'cms.plugins.twitter',
     'storages',
 
 )

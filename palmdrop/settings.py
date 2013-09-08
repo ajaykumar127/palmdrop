@@ -13,14 +13,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-# ('Your Name', 'your_email@example.com'),
+     ('michael', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
-
-
-# DATABASES['default'] =  dj_database_url.config()
-
 
 
 # Amazon S3 credentials
@@ -35,7 +31,7 @@ S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # Default File storage
-DEFAULT_FILE_STORAGE = 'storages.backends.S3Storage.S3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
 

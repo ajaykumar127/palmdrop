@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import dj_database_url
+
 gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
@@ -9,7 +10,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+# ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
@@ -20,8 +21,8 @@ MANAGERS = ADMINS
 
 
 # Amazon S3 credentials
-AWS_ACCESS_KEY_ID       = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY   = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 # Amazon S3 URL
 AWS_STORAGE_BUCKET_NAME = 'palmdrop'
@@ -29,12 +30,11 @@ S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Static files location
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATIC_URL = '/https://s3.amazonaws.com/palmdrop/static/'
 
 # Default File storage
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
-MEDIA_URL =  'https://s3.amazonaws.com/palmdrop/media/'
+MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
 
 #for connecting through http not https on amazon
 AWS_S3_SECURE_URLS = False
@@ -110,7 +110,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = '/https://s3.amazonaws.com/palmdrop/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -135,7 +135,7 @@ SECRET_KEY = 'd44@gwt@db8uhee$ks=83)a8fh8uu17&-zg&bx(h_8z^gd$a3x'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    #     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (

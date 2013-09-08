@@ -37,6 +37,7 @@ MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
 
 #for connecting through http not https on amazon
 AWS_S3_SECURE_URLS = False
+AWS_QUERYSTRING_AUTH = False
 
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}

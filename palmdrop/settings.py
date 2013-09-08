@@ -6,6 +6,9 @@ import dj_database_url
 gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__ + '/../../palmdrop/'))
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

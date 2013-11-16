@@ -1,7 +1,7 @@
 # Django settings for palmdrop project.
 # -*- coding: utf-8 -*-
 import os
-import dj_database_url
+# import dj_database_url
 
 gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -20,39 +20,41 @@ MANAGERS = ADMINS
 
 
 # Amazon S3 credentials
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 # Amazon S3 URL
-AWS_STORAGE_BUCKET_NAME = 'palmdrop'
+# AWS_STORAGE_BUCKET_NAME = 'palmdrop'
 # S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Static files location
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# STATICFILES_STORAGE = ''
 
 # Default File storage
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# DEFAULT_FILE_STORAGE = ''
 
-MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
-
+# MEDIA_URL = 'https://s3.amazonaws.com/palmdrop/media/'
+MEDIA_URL = "/media/"
 #for connecting through http not https on amazon
 AWS_S3_SECURE_URLS = False
 # AWS_QUERYSTRING_AUTH = False
 
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
-DATABASES = {'default': dj_database_url.config()}
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'palmdrop.db',                      # Or path to database file if using sqlite3.
-#         # The following settings are not used with sqlite3:
-#         'USER': '',
-#         'PASSWORD': '',
-#         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-#         'PORT': '',                      # Set to empty string for default.
-#     }
-# }
+# DATABASES = {'default': dj_database_url.config()}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'palmdrop.db',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -95,7 +97,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -211,7 +213,7 @@ INSTALLED_APPS = (
     'cms.plugins.text',
     # 'cms.plugins.video',
     # 'cms.plugins.twitter',
-    'storages',
+    # 'storages',
 
 )
 
